@@ -1,0 +1,46 @@
+{
+    "Batman": {
+        "Strength": "80",
+        "Perception": "70",
+        "Endurance": "60",
+        "Charisma": "60",
+        "Intelligence": "100",
+        "Agility": "60",
+        "Dexterity": "60",
+        "Luck": "10",
+        "Superpowers": "0"
+    },
+    "SpiderMan": {
+        "Strength": "100",
+        "Perception": "90",
+        "Endurance": "70",
+        "Charisma": "50",
+        "Intelligence": "80",
+        "Agility": "80",
+        "Dexterity": "80",
+        "Luck": "-120",
+        "Superpowers": "70"
+    },
+    "SuperMan": {
+        "Strength": "100",
+        "Perception": "90",
+        "Endurance": "100",
+        "Charisma": "20",
+        "Intelligence": "40",
+        "Agility": "70",
+        "Dexterity": "40",
+        "Luck": "0",
+        "Superpowers": "100"
+    },
+    "Wonder Woman": {
+        "Strength": "90",
+        "Perception": "90",
+        "Endurance": "80",
+        "Charisma": "30",
+        "Intelligence": "40",
+        "Agility": "80",
+        "Dexterity": "50",
+        "Luck": "30",
+        "Superpowers": "70"
+    }
+}

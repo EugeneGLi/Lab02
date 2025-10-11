@@ -1,0 +1,11 @@
+[theme]
+base = "dark"
+primaryColor = "#008e00"
+textColor = "#05c105ff"
+font = "serif"
+baseRadius = "full"
+showWidgetBorder=true
+borderColor="#005f00"
+
+[theme.sidebar]
+backgroundColor = "#002f00"
