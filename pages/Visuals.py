@@ -180,16 +180,16 @@ if ifExists():
 
     #Call json files into existence
 
-    with open('data.json') as statData:  #NEW, data.json
+    with open('data.json') as currentData:  #NEW, data.json
 
-        statData = json.load(statData) #NEW
+        currentData = json.load(currentData) #NEW
         unwantedVar = ""
-        for (statDict) in statData.values():
+        for (statDict) in currentData.values():
             for (Proficiency) in statDict.keys():
                 if Proficiency not in listboy: #Check for unwanted attributes
                     #Get rid of custom naming for given superpower
-                    statData[hero_Name]['Superpowers'] = statData[hero_Name][Proficiency]
-                    del statData[hero_Name][Proficiency]
+                    currentData[hero_Name]['Superpowers'] = currentData[hero_Name][Proficiency]
+                    del currentData[hero_Name][Proficiency]
         #Dictionary with correct naming!
 
     with open('opponents.json') as Opp: #NEW
@@ -209,11 +209,11 @@ if ifExists():
         st.session_state.selected_opponents[Super] = Matchup #NEW
         if Matchup:
             Subaru.append(Super)
-            if Super not in statData:
-                statData[Super] = statDict #add opponent to copy of data.json
+            if Super not in currentData:
+                currentData[Super] = statDict #add opponent to copy of data.json
     
     with open('data.json', 'w', encoding='utf-8') as jsonWrite: #NEW
-        json.dump(statData, jsonWrite, indent=5) #rewrite old json with new one
+        json.dump(currentData, jsonWrite, indent=5) #rewrite old json with new one
 
     oppNumber = len(Subaru)
     df = pd.read_json('data.json')
