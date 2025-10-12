@@ -42,5 +42,16 @@
         "Dexterity": "50",
         "Luck": "30",
         "Superpowers": "70"
+    },
+    "The Incredible Hulk":{
+        "Strength": 190,
+        "Perception": 40,
+        "Endurance":150,
+        "Charisma":-20,
+        "Intelligence":-20,
+        "Agility":70,
+        "Dexterity":0,
+        "Luck":0,
+        "Superpowers":90
     }
 }
