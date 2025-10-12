@@ -9,7 +9,8 @@ st.set_page_config(
 )
 
 # WELCOME PAGE TITLE
-st.title("Welcome to My Data Dashboard!📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊")
+st.title("Welcome to My Data Dashboard!")
+st.write("📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊📊")
 st.image('images/dashboard.webp')
 # INTRODUCTORY TEXT
 
