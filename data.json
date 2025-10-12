@@ -1,12 +1,35 @@
 {
-     "Your Hero": {
-          "Strength": "0",
-          "Perception": "0",
-          "Endurance": "0",
-          "Charisma": "0",
-          "Intelligence": "0",
-          "Agility": "0",
+     "Lloyd": {
+          "Strength": "50",
+          "Perception": "50",
+          "Endurance": "50",
+          "Charisma": "50",
+          "Intelligence": "100",
+          "Agility": "30",
           "Dexterity": "0",
-          "Luck": "0"
+          "Luck": "70",
+          "Superpowers": "100"
+     },
+     "Batman": {
+          "Strength": "80",
+          "Perception": "70",
+          "Endurance": "60",
+          "Charisma": "60",
+          "Intelligence": "100",
+          "Agility": "60",
+          "Dexterity": "60",
+          "Luck": "10",
+          "Superpowers": "0"
+     },
+     "Invincible": {
+          "Strength": 100,
+          "Perception": 20,
+          "Endurance": 150,
+          "Charisma": 50,
+          "Intelligence": 40,
+          "Agility": 10,
+          "Dexterity": 30,
+          "Luck": 10,
+          "Superpowers": 90
      }
 }

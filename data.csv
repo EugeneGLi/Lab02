@@ -1,9 +1,10 @@
 Stats,Proficiency
-Strength,0
-Perception,0
-Endurance,0
-Charisma,0
-Intelligence,0
-Agility,0
+Strength,50
+Perception,50
+Endurance,50
+Charisma,50
+Intelligence,100
+Agility,30
 Dexterity,0
-Luck,0
+Luck,70
+Green Proficiency,100

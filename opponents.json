@@ -53,5 +53,15 @@
         "Dexterity":0,
         "Luck":0,
         "Superpowers":90
-    }
+    },
+        "Invincible":{
+        "Strength": 100,
+        "Perception": 20,
+        "Endurance":150,
+        "Charisma":50,
+        "Intelligence":40,
+        "Agility":10,
+        "Dexterity":30,
+        "Luck":10,
+        "Superpowers":90}
 }

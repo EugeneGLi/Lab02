@@ -185,11 +185,13 @@ if ifExists():
         currentData = json.load(currentData) #NEW
         unwantedVar = ""
         for (statDict) in currentData.values():
-            for (stat,Proficiency) in statDict.items():
+            for (Proficiency, number) in statDict.items():
                 if Proficiency not in listboy: #Check for unwanted attributes
-                    #Get rid of custom naming for given superpower
-                    currentData[hero_Name]['Superpowers'] = currentData[hero_Name][Proficiency]
-                    del currentData[hero_Name][Proficiency]
+                    unwantedVar = Proficiency
+                else:
+                    unwantedVar = 'Superpowers'    
+            currentData[hero_Name]['Superpowers'] = currentData[hero_Name][unwantedVar]
+            del currentData[hero_Name][unwantedVar]
         #Dictionary with correct naming!
 
     with open('opponents.json') as Opp: #NEW
