@@ -178,6 +178,8 @@ if ifExists():
                 if Proficiency not in listboy:
                     unwantedVar = Proficiency
                     #st.write(unwantedVar)
+                else:
+                    unwantedVar = 'Superpowers'
         currentData[hero_Name]['Superpowers'] = currentData[hero_Name][unwantedVar]
         del currentData[hero_Name][unwantedVar]
         #Dictionary with correct naming!
