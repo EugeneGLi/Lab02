@@ -13,10 +13,22 @@ st.set_page_config(
     page_title="Visualizations",
     page_icon="📈",
 )
-
+with open('data.csv', mode='r') as Csv: #NEW
+    csvread = csv.reader(Csv) #NEW
+    mydict = dict((rows[0],rows[1]) for rows in csvread) #NEW
+    del mydict['Stats']
+    count = 0
+    for value in mydict.values():
+        if value == "0":
+            count += 1
+    if count < 8:
+        st.title("Your Hero is Ready!! 📈")
+        st.write("The last step is to give them a name!")
+    else:
+        st.title("Your Hero Isn't Ready Yet!! 😔")
+        st.write("Give your hero a name, and modify their abilities in the Survey Page!")
 # PAGE TITLE AND INFORMATION
-st.title("Your Hero is Ready!! 📈")
-st.write("The last step is to give them a name!")
+
 
 if 'supName' not in st.session_state:
     st.session_state.supName = ""
@@ -117,10 +129,9 @@ st.session_state.xVar = xVar
 st.session_state.yVar = yVar
 
 if ifExists():
-    with open('data.json', 'r') as Json: #NEW
-        dataJson0 = json.load(Json) #NEW
-        dataJsonCopy={}
-    for (Name, statDict) in dataJson0.items():
+
+    dataJsonCopy={}
+    for (Name, statDict) in statData.items():
         for (Stat,pointValue) in statDict.items():
             dataJsonCopy[Stat] = pointValue[:]
         #st.write(pointValue)
@@ -129,9 +140,9 @@ if ifExists():
                 dataJsonCopy.pop(Stat) #NEW
             if st.session_state.yVar < int(pointValue):
                 dataJsonCopy.pop(Stat) #NEW
-    dataJson0 = dataJsonCopy
-    #st.write(dataJson0)
-    st.line_chart(dataJson0,x_label='Stats', y_label='Points') #NEW
+    statData = dataJsonCopy
+    #st.write(statData)
+    st.line_chart(statData,x_label='Stats', y_label='Points') #NEW
     st.write('Description: Using Json data, I have constructed a line chart depicting the results from my survey.' \
     ' Two indexes are provided: The minimum and maximum range. Change them via the sliders.' \
     ' They will affect the graph!')
@@ -169,19 +180,16 @@ if ifExists():
 
     #Call json files into existence
 
-    with open('data.json') as currentData:  #NEW, data.json
+    with open('data.json') as statData:  #NEW, data.json
 
-        currentData = json.load(currentData) #NEW
+        statData = json.load(statData) #NEW
         unwantedVar = ""
-        for (statDict) in currentData.values():
+        for (statDict) in statData.values():
             for (Proficiency) in statDict.keys():
-                if Proficiency not in listboy:
-                    unwantedVar = Proficiency
-                    #st.write(unwantedVar)
-                else:
-                    unwantedVar = 'Superpowers'
-        currentData[hero_Name]['Superpowers'] = currentData[hero_Name][unwantedVar]
-        del currentData[hero_Name][unwantedVar]
+                if Proficiency not in listboy: #Check for unwanted attributes
+                    #Get rid of custom naming for given superpower
+                    statData[hero_Name]['Superpowers'] = statData[hero_Name][Proficiency]
+                    del statData[hero_Name][Proficiency]
         #Dictionary with correct naming!
 
     with open('opponents.json') as Opp: #NEW
@@ -201,11 +209,11 @@ if ifExists():
         st.session_state.selected_opponents[Super] = Matchup #NEW
         if Matchup:
             Subaru.append(Super)
-            if Super not in currentData:
-                currentData[Super] = statDict #add opponent to copy of data.json
+            if Super not in statData:
+                statData[Super] = statDict #add opponent to copy of data.json
     
     with open('data.json', 'w', encoding='utf-8') as jsonWrite: #NEW
-        json.dump(currentData, jsonWrite, indent=5) #rewrite old json with new one
+        json.dump(statData, jsonWrite, indent=5) #rewrite old json with new one
 
     oppNumber = len(Subaru)
     df = pd.read_json('data.json')
