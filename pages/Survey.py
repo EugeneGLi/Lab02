@@ -34,7 +34,7 @@ def DATA_DISPLAY():
 # PAGE CONFIGURATION
 st.set_page_config(
     page_title="Hero Survey",
-    page_icon="🦸📝",
+    page_icon="🦸",
 )
 
 # PAGE TITLE AND USER DIRECTIONS
