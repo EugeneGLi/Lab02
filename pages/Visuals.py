@@ -193,7 +193,7 @@ if ifExists():
                     unwantedVar = 'Superpowers'   
             if len(statDict) == 9:
                 currentData[hero_Name]['Superpowers'] = currentData[hero_Name][unwantedVar]
-            del currentData[hero_Name][unwantedVar]
+                del currentData[hero_Name][unwantedVar]
         #Dictionary with correct naming!
 
     with open('opponents.json') as Opp: #NEW
