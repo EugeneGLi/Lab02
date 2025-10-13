@@ -185,9 +185,11 @@ if ifExists():
         currentData = json.load(currentData) #NEW
         unwantedVar = ""
         for (statDict) in currentData.values():
+
             for (Proficiency, number) in statDict.items():
-                if Proficiency not in listboy: #Check for unwanted attributes
+                if (Proficiency not in listboy) and len(statDict) == 9: #Check for unwanted attributes
                     unwantedVar = Proficiency
+                    #print('asdddddddddddddddddddddddddddddddddddddddddddddddddddd')
                 else:
                     unwantedVar = 'Superpowers'    
             currentData[hero_Name]['Superpowers'] = currentData[hero_Name][unwantedVar]

@@ -41,3 +41,4 @@ st.write("""This project is part of CS 1301's Lab 2.
 # 3. Uncomment the line below and change the filename to match yours.
 #
 # st.image("images/welcome_image.png")
+
