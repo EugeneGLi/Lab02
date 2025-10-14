@@ -128,7 +128,7 @@ with st.form("survey_form") as form:
     # The submit button for the form.
     updateform = st.form_submit_button('Update', use_container_width= True)
     if updateform:
-         st.rerun()
+        st.rerun()
         #Metrics for logging point allocation
     total_used = sum(st.session_state.stat_values.values())
     remaining_total = statPool - total_used
